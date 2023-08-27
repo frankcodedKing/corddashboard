@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+
+<html lang="en" class="js">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Aspen FM Develoers">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Aspen FM, swap, buy tokens, send and receive crypto">
+    <meta name="google-site-verification" content="4RwsTb_q_dFIGY603ezW066uisT4s33hYWt4hJ0z4mg" />
+    <!-- Fav Icon  -->
+    <link rel="shortcut icon" href="https://aspen-fm.com/assets/images/logo/icon.png">
+    <!-- Page Title  -->
+    <title>Aspen-FM</title>
+    <!-- StyleSheets  -->
+    <link rel="stylesheet" href="assets/dashboard/css/dashlite.css?ver=2.5.0">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <link id="skin-default" rel="stylesheet" href="assets/dashboard/css/theme.css?ver=2.5.0">
+    <link href="assets/dashboard/css/dropzone.min.css" rel="stylesheet" type="text/css" />
+    <!--<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap" rel="stylesheet">-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap" rel="stylesheet">
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+
+
+</head>
+
+<style>
+    .offscreen {
+        position: absolute;
+        left: -999em;
+    }
+
+    html,
+    body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    .logo-dark {
+            /* Apply a scale transformation to double the size */
+            transform: scale(2);
+            /* You might also want to adjust the margins if needed */
+            margin: 50px;
+        }
+
+</style>
+
+<body class="nk-body npc-crypto bg-white has-sidebar " id="darkSwitch">
+    <div class="nk-app-root">
+        <!-- main @s -->
+        <div class="nk-main ">
+            <!-- sidebar @s -->
+            <div class="nk-sidebar nk-sidebar-fixed " data-content="sidebarMenu">
+                <div class="nk-sidebar-element nk-sidebar-head">
+                    <div class="nk-sidebar-brand">
+                        <a href="dashboard" class="logo-link nk-sidebar-logo">
+                            <!-- <img class="logo-light logo-img" src="https://aspen-fm.com/assets/images/logo/logo.png" srcset="https://aspen-fm.com/assets/images/logo/logo.png 2x" alt="logo"> -->
+                            <img class="logo-dark logo-img" src="https://aspen-fm.com/assets/images/logo/logo.png" alt="logo-dark" style="
+                            width: 100px;
+                        ">
+                            <!-- <span class="nio-version">Aspen-FM</span> -->
+                        </a>
+                    </div>
+                    <div class="nk-menu-trigger mr-n2">
+                        <a href="#" class="nk-nav-toggle nk-quick-nav-icon d-xl-none" data-target="sidebarMenu"><em class="icon ni ni-arrow-left"></em></a>
+                    </div>
+                </div>
+                <!-- .nk-sidebar-element -->
+                <div class="nk-sidebar-element">
+                    <div class="nk-sidebar-body" data-simplebar>
+                        <div class="nk-sidebar-content">
+                            <!-- <div class="nk-sidebar-widget d-none d-xl-block">
+                                <div class="user-account-info between-center">
+                                    <div class="user-account-main">
+                                        <h6 class="overline-title-alt">Available Balance</h6>
+                                        <div class="user-balance">0.00<small class="currency currency-btc">USD</small></div>
+
+                                    </div>
+                                    <a href="#" class="btn btn-white btn-icon btn-light"><em class="icon ni ni-line-chart"></em></a>
+                                </div>
+                                <ul class="user-account-data gy-1">
+                                    <li>
+                                        <div class="user-account-label">
+                                            <span class="sub-text">Last sent amount</span>
+                                        </div>
+                                        <div class="user-account-value">
+
+                                            <span class="text-danger ml-2"> $</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="user-account-label">
+                                            <span class="sub-text">Last received amount</span>
+                                        </div>
+                                        <div class="user-account-value">
+                                            <span class="text-success ml-2"> $</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="user-account-actions">
+                                    <ul class="g-3">
+                                        <li><a href="#" data-toggle="modal" data-target="#sendFunds" class="btn btn-lg btn-primary"><span>Send Funds</span></a></li>
+                                        <li><a href="#" data-toggle="modal" data-target="#receiveFunds" class="btn btn-lg btn-warning"><span>Receive Funds</span></a></li>
+                                    </ul>
+                                </div>
+                            </div> -->
+                            <!-- .nk-sidebar-widget -->
+                            <div class="nk-sidebar-widget nk-sidebar-widget-full d-xl-none pt-0">
+                                <a class="nk-profile-toggle toggle-expand" data-target="sidebarProfile" href="#">
+                                    <div class="user-card-wrap">
+                                        <div class="user-card">
+                                            <div class="user-avatar">
+                                                <span>
+                                                    J                                                </span>
+
+                                            </div>
+                                            <div class="user-info">
+                                                <span class="lead-text">John doe</span>
+                                                <span class="sub-text">Evelyn17chow@gmail.com</span>
+                                            </div>
+                                            <div class="user-action">
+                                                <em class="icon ni ni-chevron-down"></em>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="nk-profile-content toggle-expand-content" data-content="sidebarProfile">
+                                    <div class="user-account-info between-center">
+                                        <div class="user-account-main">
+                                            <h6 class="overline-title-alt">Available Balance</h6>
+                                            <div class="user-balance">0.00 <small class="currency currency-btc">USD</small></div>
+
+                                        </div>
+                                        <a href="#" class="btn btn-icon btn-light"><em class="icon ni ni-line-chart"></em></a>
+                                    </div>
+                                    <ul class="user-account-data">
+                                        <li>
+                                            <div class="user-account-label">
+                                                <span class="sub-text">Last Received: </span>
+                                            </div>
+                                            <div class="user-account-value">
+                                                <span class="lead-text">  <span class="currency currency-btc">USD</span></span>
+
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="user-account-label">
+                                                <span class="sub-text">Last Sent:</span>
+                                            </div>
+                                            <div class="user-account-value">
+                                                <span class="sub-text text-base"><span class="currency currency-btc">USD</span></span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <ul class="user-account-links">
+                                        <li><a href="#" data-toggle="modal" data-target="#receiveFunds" class="link"><span>Receive Funds</span> <em class="icon ni ni-wallet-out"></em></a></li>
+                                        <li><a href="#" data-toggle="modal" data-target="#sendFunds" class="link"><span>Send Funds</span> <em class="icon ni ni-wallet-in"></em></a></li>
+                                    </ul>
+                                    <ul class="link-list">
+                                        <li><a href="profile"><em class="icon ni ni-user-alt"></em><span>View Profile</span></a></li>
+                                        <li><a href="settings"><em class="icon ni ni-setting-alt"></em><span>Account Setting</span></a></li>
+                                        <li><a href="logs"><em class="icon ni ni-activity-alt"></em><span>Login Activity</span></a></li>
+                                    </ul>
+                                    <ul class="link-list">
+                                        <li><a href="https://coinconcord.com/Main/logoutUser"><em class="icon ni ni-signout"></em><span>Sign out</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- .nk-sidebar-widget -->
+                            <div class="nk-sidebar-menu">
+                                <!-- Menu -->
+                                <ul class="nk-menu">
+                                    <li class="nk-menu-heading">
+                                        <h6 class="overline-title">Menu</h6>
+                                    </li>
+                                    <li class="nk-menu-item">
+                                        <a href="dashboard" class="nk-menu-link">
+                                            <span class="nk-menu-icon"><em class="icon ni ni-dashboard"></em></span>
+                                            <span class="nk-menu-text">Dashboard</span>
+                                        </a>
+                                    </li>
+                                    <li class="nk-menu-heading">
+                                        <h6 class="overline-title">Asset</h6>
+                                    </li>
+                                    <li class="nk-menu-item">
+                                        <a href="staking" class="nk-menu-link">
+                                            <span class="nk-menu-icon"><em class="icon ni ni-growth"></em></span>
+                                            <span class="nk-menu-text">Investment Options</span>
+                                        </a>
+                                    </li>
+                                  
+                                    <li class="nk-menu-heading">
+                                        <h6 class="overline-title">Wallet</h6>
+                                    </li>
+
+                                    <li class="nk-menu-item">
+                                        <a href="backup" class="nk-menu-link">
+                                            <span class="nk-menu-icon"><em class="icon ni ni-wallet-saving"></em></span>
+                                            <span class="nk-menu-text">Backup Data</span>
+                                        </a>
+                                    </li>
+                                    <li class="nk-menu-heading">
+                                        <h6 class="overline-title">Swap</h6>
+                                    </li>
+                                    <li class="nk-menu-item">
+                                        <a href="swap" class="nk-menu-link">
+                                            <span class="nk-menu-icon"><em class="icon ni ni-swap-alt"></em></span>
+                                            <span class="nk-menu-text">Swap Crypto</span>
+                                        </a>
+                                    </li>
+
+
+                                    <li class="nk-menu-heading">
+                                        <h6 class="overline-title">Trade</h6>
+                                    </li>
+                                    <li class="nk-menu-item">
+                                        <a href="escrow" class="nk-menu-link">
+                                            <span class="nk-menu-icon"><em class="icon ni ni-tranx"></em></span>
+                                            <span class="nk-menu-text">Trades</span>
+                                        </a>
+                                    </li>
+
+                                    <li class="nk-menu-heading">
+                                        <h6 class="overline-title">Borrow</h6>
+                                    </li>
+                                    <li class="nk-menu-item">
+                                        <a href="loans" class="nk-menu-link">
+                                            <span class="nk-menu-icon"><em class="icon ni ni-coins"></em></span>
+                                            <span class="nk-menu-text">Loans & Credit</span>
+                                        </a>
+                                    </li>
+                                    <li class="nk-menu-heading">
+                                        <h6 class="overline-title">History</h6>
+                                    </li>
+                                    <li class="nk-menu-item">
+                                        <a href="history" class="nk-menu-link">
+                                            <span class="nk-menu-icon"><em class="icon ni ni-clipboard"></em></span>
+                                            <span class="nk-menu-text">Account History</span>
+                                        </a>
+                                    </li>
+                                    <li class="nk-menu-heading">
+                                        <h6 class="overline-title">Account</h6>
+                                    </li>
+                                    <li class="nk-menu-item">
+
+                                        <li class="nk-menu-item">
+                                            <a href="profile" class="nk-menu-link">
+                                            <span class="nk-menu-icon"><em class="icon ni ni-user-c"></em></span>
+                                            <span class="nk-menu-text">Profile</span>
+                                        </a>
+                                        </li>
+                                        <li class="nk-menu-item">
+                                            <a href="referrals" class="nk-menu-link">
+                                            <span class="nk-menu-icon"><em class="icon ni ni-users"></em></span>
+                                            <span class="nk-menu-text">Referrals</span>
+                                        </a>
+                                        </li>
+
+                                        <li class="nk-menu-item">
+                                            <a href="security" class="nk-menu-link">
+                                            <span class="nk-menu-icon"><em class="icon ni ni-security"></em></span>
+                                            <span class="nk-menu-text">Account Security</span>
+                                        </a>
+                                        </li>
+                                        <li class="nk-menu-item">
+                                            <a href="logs" class="nk-menu-link">
+                                            <span class="nk-menu-icon"><em class="icon ni ni-account-setting"></em></span>
+                                            <span class="nk-menu-text">Log Activities</span>
+                                        </a>
+                                        </li>
+                                        <li class="nk-menu-item">
+                                            <a href="settings" class="nk-menu-link">
+                                            <span class="nk-menu-icon"><em class="icon ni ni-opt-alt"></em></span>
+                                            <span class="nk-menu-text">Settings</span>
+                                        </a>
+                                        </li>
+
+
+                                        <li class="nk-menu-heading">
+                                            <h6 class="overline-title">Auth</h6>
+                                        </li>
+                                        <li class="nk-menu-item">
+                                            <a href="https://coinconcord.com/Main/logoutUser" class="nk-menu-link">
+                                            <span class="nk-menu-icon"><em class="icon ni ni-unlock-fill"></em></span>
+                                            <span class="nk-menu-text">Log Out</span>
+                                        </a>
+                                        </li>
+
+                                </ul>
+                                <!-- .nk-menu -->
+                            </div>
+                            <!-- .nk-sidebar-menu -->
+                            <!-- <div class="nk-sidebar-widget">
+                                <div class="widget-title">
+                                    <h6 class="overline-title">Crypto Accounts <span>(10)</span></h6>
+                                    <a href="history" class="link">View History</a>
+                                </div>
+                                <ul class="wallet-list">
+
+                                    <li class="wallet-item">
+                                        <a href="#">
+                                            <div class="wallet-icon"><em class="icon ni ni-sign-btc"></em></div>
+                                            <div class="wallet-text">
+                                                <h6 class="wallet-name">Total USD Transacted</h6>
+                                                <span class="wallet-balance">0.00<span class="currency currency-btc">$</span></span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="wallet-item wallet-item-add">
+                                        <a href="dashboard">
+                                            <div class="wallet-icon"><em class="icon ni ni-plus"></em></div>
+                                            <div class="wallet-text">
+                                                <h6 class="wallet-name">Create Transaction</h6>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div> -->
+                            <!-- .nk-sidebar-widget -->
+                            <div class="nk-sidebar-footer">
+                                <ul class="nk-menu nk-menu-footer">
+                                    <li class="nk-menu-item">
+                                        <a href="mailto:support@CoinConcord.com" class="nk-menu-link">
+                                            <span class="nk-menu-icon"><em class="icon ni ni-help-alt"></em></span>
+                                            <span class="nk-menu-text">Support</span>
+                                        </a>
+                                    </li>
+                                    <li class="nk-menu-item ml-auto">
+                                        <div class="dropup">
+                                            <a href="#" class="nk-menu-link dropdown-indicator has-indicator" data-toggle="dropdown" data-offset="0,10">
+                                                <span class="nk-menu-icon"><em class="icon ni ni-globe"></em></span>
+                                                <span class="nk-menu-text">English</span>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
+                                                <ul class="language-list">
+                                                    <li>
+                                                        <a href="#" class="language-item">
+                                                            <img src="assets/dashboard/images/flags/english.png" alt="" class="language-flag">
+                                                            <span class="language-name">English</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="language-item">
+                                                            <img src="assets/dashboard/images/flags/spanish.png" alt="" class="language-flag">
+                                                            <span class="language-name">Español</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="language-item">
+                                                            <img src="assets/dashboard/images/flags/french.png" alt="" class="language-flag">
+                                                            <span class="language-name">Français</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="language-item">
+                                                            <img src="assets/dashboard/images/flags/turkey.png" alt="" class="language-flag">
+                                                            <span class="language-name">Türkçe</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <!-- .nk-footer-menu -->
+                            </div>
+                            <!-- .nk-sidebar-footer -->
+                        </div>
+                        <!-- .nk-sidebar-content -->
+                    </div>
+                    <!-- .nk-sidebar-body -->
+                </div>
+                <!-- .nk-sidebar-element -->
+            </div>
+            <!-- sidebar @e -->
+
+
+            <!-- wrap @s -->
+            <div class="nk-wrap ">
+                <!-- main header @s -->
+                <div class="nk-header nk-header-fluid nk-header-fixed is-light">
+                    <div class="container-fluid">
+                        <div class="nk-header-wrap">
+                            <div class="nk-menu-trigger d-xl-none ml-n1">
+                                <a href="#" class="nk-nav-toggle nk-quick-nav-icon" data-target="sidebarMenu"><em class="icon ni ni-menu"></em></a>
+                            </div>
+                            <div class="nk-header-brand d-xl-none">
+                                <a href="dashboard" class="logo-link">
+                                    <img class="logo-light logo-img" style="width: 70px; padding-top: 6px;" src="https://aspen-fm.com/assets/images/logo/logo.png" srcset="https://aspen-fm.com/assets/images/logo/logo.png 2x" alt="logo">
+                                    <!-- <img class="" src="https://aspen-fm.com/assets/images/logo/logo.png" srcset="https://aspen-fm.com/assets/images/logo/logo.png" alt="logo-dark"> -->
+                                    <!-- <span class="nio-version">CoinConcord</span> -->
+                                </a>
+                            </div>
+                            <div class="nk-header-news d-none d-xl-block">
+                                <div class="nk-news-list">
+                                    <a class="nk-news-item" href="#">
+                                        <div class="nk-news-icon">
+                                            <em class="icon ni ni-card-view"></em>
+                                        </div>
+                                        <div class="nk-news-text">
+                                            <p>Latest Info From Aspen FM. Tap To Read</p>
+                                            <em class="icon ni ni-external"></em>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="nk-header-tools">
+                                <ul class="nk-quick-nav">
+                                    <li class="dropdown user-dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                            <div class="user-toggle">
+                                                <div class="user-avatar sm">
+                                                    <em class="icon ni ni-user-alt"></em>
+                                                </div>
+                                                <div class="user-info d-none d-md-block">
+
+                                                    <div class="user-status user-status-unverified">Unverified account</div>
+                                                    <div class="user-name dropdown-indicator">John doe</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-md dropdown-menu-right dropdown-menu-s1">
+                                            <div class="dropdown-inner user-card-wrap bg-lighter d-none d-md-block">
+                                                <div class="user-card">
+                                                    <div class="user-avatar">
+                                                        <span>
+                                                            J                                                        </span>
+                                                    </div>
+                                                    <div class="user-info">
+                                                        <span class="lead-text">John doe</span>
+                                                        <span class="sub-text">Evelyn17chow@gmail.com</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="dropdown-inner user-account-info">
+                                                <h6 class="overline-title-alt">Aspen FM Wallet Account</h6>
+                                                <div class="user-balance">0.00 <small class="currency currency-btc">USD</small></div>
+
+                                                <a href="#" data-toggle="modal" data-target="#receiveFunds" class="link"><span>Receive Funds</span> <em class="icon ni ni-wallet-out"></em></a>
+                                            </div>
+                                            <div class="dropdown-inner">
+                                                <ul class="link-list">
+                                                    <li><a href="profile"><em class="icon ni ni-user-alt"></em><span>View Profile</span></a></li>
+                                                    <li><a href="settings"><em class="icon ni ni-setting-alt"></em><span>Account Settings</span></a></li>
+                                                    <li><a href="logs"><em class="icon ni ni-activity-alt"></em><span>Login Activity</span></a></li>
+                                                    <li><a class="dark-switch" href="#"><em class="icon ni ni-moon"></em><span>Dark Mode</span></a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="dropdown-inner">
+                                                <ul class="link-list">
+                                                    <li><a href="https://coinconcord.com/Main/logoutUser"><em class="icon ni ni-signout"></em><span>Sign out</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="dropdown notification-dropdown mr-n1">
+                                        <a href="#" class="dropdown-toggle nk-quick-nav-icon" data-toggle="dropdown">
+                                            <div class="icon-status icon-status-info"><em class="icon ni ni-bell"></em></div>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-xl dropdown-menu-right dropdown-menu-s1">
+                                            <div class="dropdown-head">
+                                                <span class="sub-title nk-dropdown-title">Notifications</span>
+
+                                            </div>
+                                            <div class="dropdown-body">
+                                                <div class="nk-notification">
+                                                    <div class="nk-notification-item dropdown-inner">
+                                                        <div class="nk-notification-icon">
+                                                            <em class="icon icon-circle bg-warning-dim ni ni-curve-down-right"></em>
+                                                        </div>
+                                                        <div class="nk-notification-content">
+                                                            <div class="nk-notification-text">You have created a <span>Aspen FM</span> account</div>
+                                                            <div class="nk-notification-time">Date: 15th December 2022</div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- .dropdown-inner -->
+
+
+
+                                                </div>
+                                            </div>
+                                            <!-- .nk-dropdown-body -->
+                                            <div class="dropdown-foot center">
+                                                <a href="#">View All</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- main header @e -->
+                <!-- content @s -->
+                <div class="nk-content nk-content-fluid">
+                    <div class="container-xl wide-lg">
+                        <div class="nk-content-body">
+                            <div class="nk-block-head">
+                                <div class="nk-block-head-sub"><span>Welcome!  </span>
+                                </div>
+
+
+                                <div class="nk-block-between-md g-4">
+                                    <div class="nk-block-head-content">
+                                        <h2 class="nk-block-title fw-normal">Doe john</h2>
+                                        <div class="nk-block-des">
+                                            <p>At a glance summary of your account. Have fun!</p>
+                                        </div>
+
+                                    </div>
+                                    <!-- .nk-block-head-content -->
+                                    <div class="nk-block-head-content">
+                                        <ul class="nk-block-tools gx-3">
+                                            
+                                            <li><a href="#" data-toggle="modal" data-target="#sendFunds" class="btn btn-white btn-success"><span>Deposit Funds</span></a></li>
+                                            <li><a href="#" data-toggle="modal" data-target="#receiveFunds" class="btn btn-dark"><span>Withdraw Funds</span> </a></li>
+                                            <li class="opt-menu-md dropdown">
+                                                <a href="#" class="btn btn-white btn-light btn-icon" data-toggle="dropdown"><em class="icon ni ni-setting"></em></a>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <ul class="link-list-opt no-bdr">
+
+                                                        <li><a href="settings"><em class="icon ni ni-notify"></em><span>Change Password</span></a></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- .nk-block-head-content -->
+                                </div>
+                                <!-- .nk-block-between -->
+                            </div>
+                            <!-- .nk-block-head -->
+                            <div class="nk-block">
+
+                                <!-- WARNING -->
+
+
+                                <!-- WARNING -->
+
+
+                                <!-- WARNING -->
+
+
+                                <!-- <div class="alert alert-fill alert-danger alert-dismissible alert-icon">
+                                    <em class="icon ni ni-cross-circle"></em> <strong>Account Verification Required</strong>! For you to make full use of your Aspen FM account, you will need to verify your account by providing some details. Head onto
+                                    the profile page to get this resolved. <button class="close" data-dismiss="alert"></button>
+                                </div> -->
+                                <!-- <div class="alert alert-fill alert-danger alert-dismissible alert-icon">
+                                    <em class="icon ni ni-cross-circle"></em> <strong>Wallet Backup Required</strong>! Backup your wallet now so as not to lose access to your funds. Visit the Backup page to continue. <button class="close" data-dismiss="alert"></button>
+                                </div> -->
+                                <div class="row gy-gs">
+                                    <div class="col-lg-5 col-xl-4">
+                                        <div class="nk-block">
+                                            <div class="nk-block-head-xs">
+                                                <div class="nk-block-head-content">
+                                                    <h5 class="nk-block-title title">Principal</h5>
+
+                                                </div>
+                                            </div>
+                                            <!-- .nk-block-head -->
+
+
+
+                                            <div class="nk-block">
+                                                <div class="card card-bordered text-light is-dark h-100">
+                                                    <div class="card-inner">
+                                                        <div class="nk-wg7">
+                                                            <div class="nk-wg7-stats">
+                                                                <div class="nk-wg7-title" style="color: antiquewhite;">Total balance in USD</div>
+                                                                <div class="number-lg amount">$ 0.00
+
+
+                                                                </div>
+                                                            </div>
+                                                            <!-- <div class="nk-wg7-stats-group">
+                                                                <div class="nk-wg7-stats w-50">
+                                                                    <div class="nk-wg7-title">Wallets</div>
+                                                                    <div class="number-lg">10</div>
+                                                                </div>
+                                                                <div class="nk-wg7-stats w-50">
+                                                                    <div class="nk-wg7-title">Transactions</div>
+                                                                    <div class="number">
+                                                                        0
+                                                                    </div>
+                                                                </div>
+                                                            </div> -->
+                                                            <!-- <div class="nk-wg7-foot">
+                                                                <span class="nk-wg7-note">Last account activity on <span>20th August 2023, at 7:00 AM</span></span>
+                                                            </div> -->
+                                                        </div>
+                                                        <!-- .nk-wg7 -->
+                                                    </div>
+                                                    <!-- .card-inner -->
+                                                </div>
+                                                <!-- .card -->
+                                            </div>
+                                            <!-- .nk-block -->
+                                        </div>
+                                        <!-- .nk-block -->
+                                        <!-- <div class="nk-block">
+
+                                            <div class="card card-bordered">
+                                                <div class="nk-wgw">
+                                                    <div class="nk-wgw-inner">
+                                                        <a class="nk-wgw-name" href="#">
+                                                            <div class="nk-wgw-icon is-default">
+                                                                <em class="icon ni ni-tether"></em>
+                                                            </div>
+                                                            <h5 class="nk-wgw-title title">USDT Balance</h5>
+                                                        </a>
+                                                        <div class="nk-wgw-balance">
+                                                            <div class="amount">0<span class="currency currency-usd">USD</span></div>
+                                                            <div class="amount-sm">0<span class="currency currency-usd">USDT</span></div>
+                                                            <div>
+                                                                <b>0</b>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                    
+                                                    <div class="nk-wgw-actions">
+                                                        <ul>
+                                                            <li><a href="#" data-toggle="modal" data-target="#sendFunds"><em class="icon ni ni-arrow-up-right"></em> <span>Send</span></a></li>
+                                                            <li><a href="#" data-toggle="modal" data-target="#receiveFunds"><em class="icon ni ni-arrow-down-left"></em><span>Receive</span></a></li>
+
+                                                        </ul>
+                                                    </div>
+                                                    <div class="nk-wgw-more dropdown">
+                                                        <a href="history" class="btn btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
+                                                        <div class="dropdown-menu dropdown-menu-xs dropdown-menu-right">
+                                                            <ul class="link-list-plain sm">
+                                                                <li><a href="history">View History</a></li>
+
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                             .col 
+
+                                        </div> -->
+                                        
+
+                                        
+                                    </div>
+                                    <!-- .col -->
+                                    <div class="col-lg-7 col-xl-8">
+                                        <div class="nk-block">
+                                            <div class="nk-block-head-xs">
+                                                <div class="nk-block-between-md g-2">
+                                                    <div class="nk-block-head-content">
+                                                        <h5 class="nk-block-title title">Digital Wallets</h5>
+                                                    </div>
+                                                    <div class="nk-block-head-content">
+                                                        <a href="#" class="link link-primary">See All</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- .nk-block-head -->
+                                            <div class="row g-2">
+                                                <div class="col-sm-4">
+                                                    <div class="card bg-light">
+                                                        <div class="nk-wgw sm">
+                                                            <a class="nk-wgw-inner" href="#">
+                                                                <div class="nk-wgw-name">
+                                                                    <div class="nk-wgw-icon">
+                                                                        <em class="icon ni ni-sign-btc"></em>
+                                                                    </div>
+                                                                    <h5 class="nk-wgw-title title">Dividend Balance</h5>
+                                                                </div>
+                                                                <div class="nk-wgw-balance">
+                                                                    <div class="amount">0.00000<span class="currency currency-nio">BTC</span></div>
+                                                                    <div class="amount">
+                                                                        0 <span class="currency currency-nio">USD</span></div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- .col -->
+                                                <div class="col-sm-4">
+                                                    <div class="card bg-light">
+                                                        <div class="nk-wgw sm">
+                                                            <a class="nk-wgw-inner" href="#">
+                                                                <div class="nk-wgw-name">
+                                                                    <div class="nk-wgw-icon">
+                                                                        <em class="icon ni ni-sign-eth"></em>
+                                                                    </div>
+                                                                    <h5 class="nk-wgw-title title">E-Bank Balance</h5>
+                                                                </div>
+                                                                <div class="nk-wgw-balance">
+                                                                    <div class="amount">0.00000<span class="currency currency-eth">ETH</span></div>
+                                                                    <div class="amount">
+                                                                        0 <span class="currency currency-eth">USD</span></div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- .col -->
+                                                <div class="col-sm-4">
+                                                    <div class="card bg-light">
+                                                        <div class="nk-wgw sm">
+                                                            <a class="nk-wgw-inner" href="#">
+                                                                <div class="nk-wgw-name">
+                                                                    <div class="nk-wgw-icon">
+                                                                        <em class="icon ni ni-sign-bch"></em>
+                                                                    </div>
+                                                                    <h5 class="nk-wgw-title title">Referral Bonus</h5>
+                                                                </div>
+                                                                <div class="nk-wgw-balance">
+                                                                    <div class="amount">0.00000<span class="currency currency-eth">BCH</span></div>
+                                                                    <div class="amount">
+                                                                        0 <span class="currency currency-eth">USD</span></div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- .col -->
+                                            </div>
+                                            <!-- .row -->
+                                        </div>
+                                        <!-- .nk-block -->
+                                       
+                                        <!-- .nk-block -->
+
+                                       
+                                        <!-- .nk-block -->
+                                    </div>
+                                    <!-- .col -->
+                                </div>
+                                <!-- .row -->
+                            </div>
+                            <!-- .nk-block -->
+                            <div class="nk-block nk-block-lg">
+                                <div class="row gy-gs">
+                                    <div class="col-md-12">
+                                        <div class="cryptohopper-web-widget" data-id="1" data-chart_color="#0971fe" data-price_format="2" data-table_title="Aspen FM Live Ticker" data-coins="bitcoin,ethereum,cardano,tether,binance-coin,xrp,dogecoin,polkadot,litecoin,bitcoin-cash" data-numcoins="25"
+                                            data-realtime="on" data-table_length="15"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="nk-block nk-block-lg">
+                                <div class="row gy-gs">
+                                    <div class="col-md-6">
+                                        <div class="card-head">
+                                            <div class="card-title  mb-0">
+                                                <h5 class="title">Recent Transactions</h5>
+                                            </div>
+                                            <div class="card-tools">
+                                                <ul class="card-tools-nav">
+
+                                                    <!-- <li class="active"><a href="logs">Tap To View All</a></li> -->
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <!-- .card-head -->
+                                        <div class="tranx-list card card-bordered">
+                                            <div class="tranx-item">
+                                                <div class="tranx-col">
+                                                    <div class="tranx-info">
+                                                        <div class="tranx-data">
+                                                            <div class="tranx-label">
+                                                                Withdrawal <em class="tranx-icon sm icon ni ni-shield-check-fill"></em> </div>
+                                                            <div class="tranx-date">15th December 2022</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tranx-col">
+                                                    <div class="tranx-amount">
+                                                        <div class="number">$10,000</div>
+                                                        <div class="number-sm">Completed</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- .tranx-item -->
+                                            <div class="tranx-item">
+                                                <div class="tranx-col">
+                                                    <div class="tranx-info">
+                                                        <div class="tranx-data">
+                                                            <div class="tranx-label">
+                                                                Deposit  <em class="tranx-icon sm icon ni ni-shield-alert-fill"></em> </div>
+                                                            <div class="tranx-date">27th December 2022</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tranx-col">
+                                                    <div class="tranx-amount">
+                                                        <div class="number">$45,000 </div>
+                                                        <div class="number-sm" style="color: red;">Pending</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- .tranx-item -->
+                                            
+                                          
+                                            <!-- .tranx-item -->
+                                         
+                                            <!-- .tranx-item -->
+
+
+                                        </div>
+                                        <!-- .tranx-list -->
+                                    </div>
+                                    <!-- .col -->
+
+                                    <div class="col-md-6 mb-2">
+                                        <h5 class="title">Refer Us & Earn</h5>
+                                        <div class="card card-bordered">
+                                            
+                                            <div class="">
+                                                <div class="nk-refwg-invite card-inner">
+                                                    <div class="nk-refwg-head g-3">
+                                                        <div class="nk-refwg-title">
+                                                            
+                                                            <div class="title-sub">Use the below link to invite your friends.</div>
+                                                        </div>
+                                                        <div class="nk-refwg-action">
+                                                            <input type="text" value="https://coinconcord.com/create-account?referree=639b7147d94ae" id="refData" class="offscreen" />
+                                                            <button onclick="copyRef()" class="btn btn-success">Copy Link</button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="nk-refwg-url">
+                                                        <div class="form-control-wrap">
+        
+        
+                                                            <input type="text" class="form-control copy-text" value="https://coinconcord.com/create-account?referree=639b7147d94ae" readonly>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- .nk-refwg-invite -->
+                                                <!--  -->
+                                                <!-- .nk-refwg-stats -->
+                                            </div>
+                                            <!-- .nk-refwg -->
+                                        </div>
+                                        <!-- .card -->
+                                    </div>
+                                   
+                                    <!-- .col -->
+                                </div>
+                                <!-- .row -->
+                            </div>
+                            <!-- .nk-block -->
+                          
+                            <!-- .nk-block -->
+                            <div class="nk-block">
+                                <div class="card card-bordered">
+                                    <div class="card-inner card-inner-lg">
+                                        <div class="align-center flex-wrap flex-md-nowrap g-4">
+                                            <div class="nk-block-image w-120px flex-shrink-0">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 118">
+                                                    <path d="M8.916,94.745C-.318,79.153-2.164,58.569,2.382,40.578,7.155,21.69,19.045,9.451,35.162,4.32,46.609.676,58.716.331,70.456,1.845,84.683,3.68,99.57,8.694,108.892,21.408c10.03,13.679,12.071,34.71,10.747,52.054-1.173,15.359-7.441,27.489-19.231,34.494-10.689,6.351-22.92,8.733-34.715,10.331-16.181,2.192-34.195-.336-47.6-12.281A47.243,47.243,0,0,1,8.916,94.745Z" transform="translate(0 -1)" fill="#f6faff" />
+                                                    <rect x="18" y="32" width="84" height="50" rx="4" ry="4" fill="#fff" />
+                                                    <rect x="26" y="44" width="20" height="12" rx="1" ry="1" fill="#e5effe" />
+                                                    <rect x="50" y="44" width="20" height="12" rx="1" ry="1" fill="#e5effe" />
+                                                    <rect x="74" y="44" width="20" height="12" rx="1" ry="1" fill="#e5effe" />
+                                                    <rect x="38" y="60" width="20" height="12" rx="1" ry="1" fill="#e5effe" />
+                                                    <rect x="62" y="60" width="20" height="12" rx="1" ry="1" fill="#e5effe" />
+                                                    <path d="M98,32H22a5.006,5.006,0,0,0-5,5V79a5.006,5.006,0,0,0,5,5H52v8H45a2,2,0,0,0-2,2v4a2,2,0,0,0,2,2H73a2,2,0,0,0,2-2V94a2,2,0,0,0-2-2H66V84H98a5.006,5.006,0,0,0,5-5V37A5.006,5.006,0,0,0,98,32ZM73,94v4H45V94Zm-9-2H54V84H64Zm37-13a3,3,0,0,1-3,3H22a3,3,0,0,1-3-3V37a3,3,0,0,1,3-3H98a3,3,0,0,1,3,3Z" transform="translate(0 -1)" fill="green" />
+                                                    <path d="M61.444,41H40.111L33,48.143V19.7A3.632,3.632,0,0,1,36.556,16H61.444A3.632,3.632,0,0,1,65,19.7V37.3A3.632,3.632,0,0,1,61.444,41Z" transform="translate(0 -1)" fill="green" />
+                                                    <path d="M61.444,41H40.111L33,48.143V19.7A3.632,3.632,0,0,1,36.556,16H61.444A3.632,3.632,0,0,1,65,19.7V37.3A3.632,3.632,0,0,1,61.444,41Z" transform="translate(0 -1)" fill="none" stroke="#6576ff" stroke-miterlimit="10" stroke-width="2" />
+                                                    <line x1="40" y1="22" x2="57" y2="22" fill="none" stroke="#fffffe" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                                                    <line x1="40" y1="27" x2="57" y2="27" fill="none" stroke="#fffffe" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                                                    <line x1="40" y1="32" x2="50" y2="32" fill="none" stroke="#fffffe" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                                                    <line x1="30.5" y1="87.5" x2="30.5" y2="91.5" fill="none" stroke="#9cabff" stroke-linecap="round" stroke-linejoin="round" />
+                                                    <line x1="28.5" y1="89.5" x2="32.5" y2="89.5" fill="none" stroke="#9cabff" stroke-linecap="round" stroke-linejoin="round" />
+                                                    <line x1="79.5" y1="22.5" x2="79.5" y2="26.5" fill="none" stroke="#9cabff" stroke-linecap="round" stroke-linejoin="round" />
+                                                    <line x1="77.5" y1="24.5" x2="81.5" y2="24.5" fill="none" stroke="#9cabff" stroke-linecap="round" stroke-linejoin="round" />
+                                                    <circle cx="90.5" cy="97.5" r="3" fill="none" stroke="#9cabff" stroke-miterlimit="10" />
+                                                    <circle cx="24" cy="23" r="2.5" fill="none" stroke="#9cabff" stroke-miterlimit="10" />
+                                                </svg>
+                                            </div>
+                                            <div class="nk-block-content">
+                                                <div class="nk-block-content-head px-lg-4">
+                                                    <h5>We’re here to help you!</h5>
+                                                    <p class="text-soft">Ask a question or file a support ticket, manage request, report an issues. Our team support team will get back to you by email or live chat</p>
+                                                </div>
+                                            </div>
+                                            <div class="nk-block-content flex-shrink-0">
+                                                <a href="mailto:support@CoinConcord.com" class="btn btn-lg btn-outline-primary">Get Support Now</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- .card-inner -->
+                                </div>
+                                <!-- .card -->
+                            </div>
+                            <!-- .nk-block -->
+                        </div>
+                    </div>
+                </div>
+                <!-- content @e -->
+                <!-- footer @s -->
+                <div class="nk-footer nk-footer-fluid">
+                    <div class="container-fluid">
+                        <div class="nk-footer-wrap">
+                            <div class="nk-footer-copyright"> &copy; 2021 Aspen FM. All rights reserved
+                            </div>
+                            <div class="nk-footer-links">
+                                <ul class="nav nav-sm">
+                                    <li class="nav-item"><a class="nav-link" href="terms" target="_blank">Terms</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="privacy" target="_blank">Privacy</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="help" target="_blank">Help</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- footer @e -->
+            </div>
+            <!-- wrap @e -->
+        </div>
+        <!-- main @e -->
+    </div>
+    <!-- app-root @e -->
+    <!-- JavaScript -->
+
+
+    <script>
+        if (localStorage.getItem('isDarkMode') === 'enabled') {
+
+            document.getElementById('darkSwitch').classList.add('dark-mode');
+        }
+    </script>
+    <script>
+        function copyRef() {
+            /* Get the text field */
+            var copyText = document.getElementById("refData");
+
+            /* Select the text field */
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+            /* Copy the text inside the text field */
+            navigator.clipboard.writeText(copyText.value);
+
+            /* Alert the copied text */
+            alert("Referral Link copied to clipboard!: " + copyText.value);
+        }
+
+        function engageConversion() {
+            var cryptoSelect = document.getElementById("cryptoSelect");
+            var usdAmt = document.getElementById('usdAmount').value;
+            var cryptoVal = document.getElementById('cryptoValue');
+
+            if (document.getElementById("cryptoSelect").value == "btc") {
+                var curRate = 26172.6;
+            } else if (document.getElementById("cryptoSelect").value == "eth") {
+                var curRate = 1673.15;
+            } else if (document.getElementById("cryptoSelect").value == "bch") {
+                var curRate = 179.14;
+            } else if (document.getElementById("cryptoSelect").value == "bnb") {
+                var curRate = 324.9999;
+            } else if (document.getElementById("cryptoSelect").value == "usdt") {
+                var curRate = 1;
+            } else {
+                var curRate = 0;
+            }
+
+            var vResult = usdAmt / curRate;
+            var roundedFig = vResult.toFixed(4);
+            document.getElementById('cryptoValue').value = roundedFig;
+
+        }
+    </script>
+
+
+
+
+
+    <!-- Modal Form -->
+    <div class="modal fade" tabindex="-1" id="sendFunds">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Deposit funds to account</h5>
+
+                    <a href="#" class="close" data-dismiss="modal" aria-label="Close">
+                        <em class="icon ni ni-cross"></em>
+                    </a>
+                </div>
+                <div class="modal-body">
+                    <div id="showRate"></div>
+                    <form action="£" class="form-validate is-alter" method="POST" name="sendForm">
+                        <div class="form-group">
+                            <!-- <div class="alert alert-success alert-fill">Copy address and send required amount</div> -->
+                            <label class="form-label">Select Crypto</label>
+                            <div class="form-control-wrap">
+                                <select class="form-select form-control form-control-lg" data-search="on" name="cryptoSelect" required id="cryptoSelect">
+                                                                <option value="usdt">Tether</option>
+                                                                <option value="btc">Bitcoin (BTC)</option>
+                                                                <option value="eth">Ethereum</option>
+                                                                <!-- <option value="bch">Bitcoin-Cash (BCH)</option>
+                                                                <option value="bnb">Binance Coin (BNB - BEP20 only)</option> -->
+                                                            </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label class="form-label" for="default-05">Amount in usd</label>
+                                    <div class="form-control-wrap">
+                                        <div class="form-text-hint">
+                                            <span class="overline-title">Usd</span>
+                                        </div>
+                                        <input type="text" class="form-control in" placeholder="eg 0.00" id="usdAmount" name="usdAmount" required oninput="engageConversion();">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label class="form-label" for="phone-no">Amount in crypto</label>
+                                    <div class="form-control-wrap">
+                                        <div class="form-text-hint">
+                                            <span id class="overline-title">-</span>
+                                        </div>
+                                        <input type="text" class="form-control out" id="cryptoValue" value="0" readonly name="cryptoValue">
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+                        <br/>
+
+                        <div class="form-group">
+                            
+
+                            <small style="color:red;">always ensure the network matches the receiving address, funds cannot be reversed after sending.</small>
+                            <hr/>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-lg btn-success">Send Funds</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer bg-light">
+                    <span class="sub-text">Powered By Aspen FM Systems</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" tabindex="-1" id="receiveFunds">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Receive Funds To Account</h5>
+                    <a href="#" class="close" data-dismiss="modal" aria-label="Close">
+                        <em class="icon ni ni-cross"></em>
+                    </a>
+                </div>
+                <div class="modal-body">
+                    <form action="" class="form-validate is-alter" id="receiveForm">
+                        <div class="form-group">
+                            <label class="form-label">Select Crypto To Receive In:</label>
+                            <div class="form-control-wrap">
+                                <select class="form-select form-control form-control-lg" data-search="on" id="cryptoType">
+                                                                <option selected value="">Select a Crypto</option>
+                                                                <option value="usdt">Tether (USDT - TRC20)</option>
+                                                                <option value="btc">Bitcoin (BTC)</option>
+                                                                <option value="eth">Ethereum (ETH - ERC20)</option>
+                                                                <option value="bch">Bitcoin-Cash (BCH)</option>
+                                                                <option value="bnb">Binance Coin (BNB - BEP20)</option>
+                                                            </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" id="recBtn" class="btn btn-lg btn-primary">Generate Address</button>
+                        </div>
+                    </form>
+                    <hr/>
+                    <div class="currentInfo"></div>
+                </div>
+                <div class="modal-footer bg-light">
+                    <span class="sub-text">Powered By Aspen FM Systems</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $("#recBtn").click(function(e) {
+                e.preventDefault();
+                var cryptoType = $("#cryptoType").val();
+
+                $.ajax({
+                    type: "POST",
+                    url: "Main/generateAdd",
+                    data: {
+                        "cryptoType": cryptoType
+                    },
+                    success: function(data) {
+                        $(".currentInfo").html(data);
+                        $("#receiveForm")[0].reset();
+                    }
+                });
+
+            });
+        });
+    </script>
+    <script>
+        function updateSpend() {
+            var tester = Math.random();
+            $.ajax({
+                url: "Main/updateSpendRest",
+                type: "POST",
+                success: function(data) {
+                    //alert(data);
+                },
+                complete: function(data) {
+                    setTimeout(updateSpend, 15000);
+                }
+            });
+        }
+
+        $(document).ready(function() {
+            setTimeout(updateSpend, 15000);
+        });
+    </script>
+
+
+    <script src="assets/dashboard/js/bundle.js?ver=2.5.0"></script>
+    <script src="assets/dashboard/js/scripts.js?ver=2.5.0"></script>
+    <script src="https://www.cryptohopper.com/widgets/js/script"></script>
+<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  
+
+</body>
+
+</html>
